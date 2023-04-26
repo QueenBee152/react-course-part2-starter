@@ -1,10 +1,17 @@
 
-interface Action {
-    type: 'LOGIN' | 'LOGOUT';
+interface LoginAction {
+    type: "LOGIN";
+    username: string;
 }
 
-const loginStatusReducer = (state: string, action: Action ): string => {
-    if (action.type === "LOGIN") return "Ilana.deWet";
+interface LogoutAction {
+    type: "LOGOUT"
+}
+
+type AuthAction = LoginAction | LogoutAction
+
+const loginStatusReducer = (state: string, action: AuthAction ): string => {
+    if (action.type === "LOGIN") return action.username;
     if (action.type === "LOGOUT") return "";
     return state;
 }

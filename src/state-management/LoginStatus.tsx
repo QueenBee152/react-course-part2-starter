@@ -17,7 +17,10 @@ const LoginStatus = () => {
     );
   return (
     <div>
-      <a onClick={() => dispatch({ type: "LOGIN" })} href="#">
+      <a
+        onClick={() => dispatch({ type: "LOGIN", username: "Ilana.deWet" })}
+        href="#"
+      >
         Login
       </a>
     </div>
