@@ -10,10 +10,10 @@ interface LogoutAction {
 
 export type AuthAction = LoginAction | LogoutAction
 
-const loginStatusReducer = (state: string, action: AuthAction ): string => {
+const authReducer = (state: string, action: AuthAction ): string => {
     if (action.type === "LOGIN") return action.username;
     if (action.type === "LOGOUT") return "";
     return state;
 }
 
-export default loginStatusReducer
+export default authReducer
